@@ -11,5 +11,6 @@ namespace StudentAttendanceManagementApi.Models
         public int Class { get; set; }
         public char Section { get; set; }
         public string Name { get; set; }
+
     }
 }

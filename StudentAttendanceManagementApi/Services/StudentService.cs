@@ -14,12 +14,12 @@ namespace StudentAttendanceManagementApi.Services
             throw new NotImplementedException();
         }
 
-        public bool ChangePassword(int userID, string oldPassword, string newPassword)
+        public void ChangePassword(int userID, string oldPassword, string newPassword)
         {
             throw new NotImplementedException();
         }
 
-        public bool Login(int userID, string password)
+        public void Login(int userID, string password)
         {
             throw new NotImplementedException();
         }

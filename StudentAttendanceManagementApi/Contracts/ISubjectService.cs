@@ -9,7 +9,7 @@ namespace StudentAttendanceManagementApi.Contracts
     public interface ISubjectService
     {
         void AddSubject(string subjectName);
-        bool RemoveSubject(int subjectId);
+        void RemoveSubject(int subjectId);
         Subject GetSubjectById(int subjectId);
         IEnumerable<Subject> GetSubjects();
     }

@@ -4,7 +4,7 @@ namespace StudentAttendanceManagementApi.Contracts
 {
     interface IAdminService : IStaff
     {
-        bool AddStudent(string studentName, int classId, char sectionId);
-        bool AddTeacher(string name);
+        void AddStudent(int studentId, int Class, char section, string name);
+        void AddTeacher(string name);
     }
 }

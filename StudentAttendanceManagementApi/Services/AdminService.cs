@@ -9,22 +9,32 @@ namespace StudentAttendanceManagementApi.Services
 {
     public class AdminService : IAdminService
     {
-        public bool AddStudent(string studentName, int classId, char sectionId)
+        private DatabaseContext _context = DatabaseContext.GetInstance();
+        public void AddStudent(int studentId, int Class, char section, string studentName)
+        {
+            var newStudent = new Student();
+            newStudent.StudentId = studentId;
+            newStudent.Class = Class;
+            newStudent.Section = section;
+            newStudent.Name = studentName;
+            _context.Students.Add(newStudent);
+            _context.SaveChanges();
+        }
+
+        public void AddTeacher(string name)
+        {
+            var newTeacher = new Teacher();
+            newTeacher.Name = name;
+            _context.Teachers.Add(newTeacher);
+            _context.SaveChanges();
+        }
+
+        public void ChangePassword(int userID, string oldPassword, string newPassword)
         {
             throw new NotImplementedException();
         }
 
-        public bool AddTeacher(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool ChangePassword(int userID, string oldPassword, string newPassword)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Login(int userID, string password)
+        public void Login(int userID, string password)
         {
             throw new NotImplementedException();
         }

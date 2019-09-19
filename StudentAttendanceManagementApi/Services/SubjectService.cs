@@ -21,7 +21,6 @@ namespace StudentAttendanceManagementApi.Services
         public Subject GetSubjectById(int subjectId)
         {
             return _context.Subjects.Find(subjectId);
-            
         }
 
         public IEnumerable<Subject> GetSubjects()
@@ -29,9 +28,10 @@ namespace StudentAttendanceManagementApi.Services
             return _context.Subjects.ToList();
         }
 
-        public bool RemoveSubject(int subjectId)
+        public void RemoveSubject(int subjectId)
         {
-            throw new NotImplementedException();
+            _context.Subjects.Remove(_context.Subjects.Find(subjectId));
+            _context.SaveChanges();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace StudentAttendanceManagementApi.Contracts
 {
     interface IUser
     {
-        bool Login(int userID, string password);
-        bool ChangePassword(int userID, string oldPassword, string newPassword);
+        void Login(int userID, string password);
+        void ChangePassword(int userID, string oldPassword, string newPassword);
     }
 }
